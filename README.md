@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mithu Gaana Layam Fine Arts
+
+Carnatic music school website for Smt. Tharmini Thishyan — Durham, Ontario.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+my-app/
+  app/                  ← Next.js routes (thin wrappers only)
+    layout.js
+    page.js             → renders pages/HomePage.js
+    about/page.js       → renders pages/AboutPage.js
+    learn/page.js       → renders pages/LearnPage.js
+    programs/page.js    → renders pages/ProgramsPage.js
+    gallery/page.js     → renders pages/GalleryPage.js
+    contact/page.js     → renders pages/ContactPage.js
+    globals.css         ← all styles in one file
+  pages/                ← all actual page content lives here
+    HomePage.js
+    AboutPage.js
+    LearnPage.js
+    ProgramsPage.js
+    GalleryPage.js
+    ContactPage.js
+  components.js         ← all shared UI components (Navbar, Footer, etc.)
+  constants.js          ← all site data and content
+  public/
+    images/
+      logo.jpg
+      teacher.jpg
+      gallery/          ← drop performance photos here
+```
 
-## Learn More
+## Adding Gallery Photos
 
-To learn more about Next.js, take a look at the following resources:
+1. Add images to `public/images/gallery/`
+2. In `pages/GalleryPage.js`, replace the placeholder grid with real images:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```jsx
+import Image from 'next/image'
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+// Inside the photo-grid div:
+<Image src="/images/gallery/photo1.jpg" width={400} height={300} alt="Performance" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+```
 
-## Deploy on Vercel
+## Updating Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All text content and site info lives in `constants.js` — update it there and it flows through every page automatically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+
+Push to GitHub and connect to Vercel. Zero config needed — Vercel auto-detects Next.js.
