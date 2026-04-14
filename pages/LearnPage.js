@@ -82,7 +82,7 @@ export default function LearnPage() {
                 </h2>
                 <p className="exam-body">
                   Smt. Thishyan prepares students for formal Carnatic music examinations, offering
-                  a structured pathway of achievement. Exams mark clear milestones in a student's
+                  a structured pathway of achievement. Exams mark clear milestones in a student&apos;s
                   journey and give families a visible measure of their child's progress.
                 </p>
                 <p className="exam-body">

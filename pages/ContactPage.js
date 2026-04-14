@@ -41,8 +41,8 @@ export default function ContactPage() {
       <main>
         <PageHeader
           eyebrow="Get in Touch"
-          title="Let's Start Your Journey"
-          subtitle="Reach out to enroll or learn more — we'd love to hear from you"
+          title="Let&apos;s Start Your Journey"
+          subtitle="Reach out to enroll or learn more — we&apos;d love to hear from you"
         />
 
         <section className="section">

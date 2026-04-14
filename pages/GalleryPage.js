@@ -46,7 +46,7 @@ export default function GalleryPage() {
         {/* ── WHAT YOU'LL FIND ── */}
         <section className="section--alt" style={{ padding: '5rem 2rem' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <SectionHeader label="What You'll Find" title="A Living Record of Our Community" />
+            <SectionHeader label="What You&apos;ll Find" title="A Living Record of Our Community" />
             <div className="gallery-moments-grid">
               {GALLERY_MOMENTS.map((m) => (
                 <div key={m.title} className="gallery-moment-card">
